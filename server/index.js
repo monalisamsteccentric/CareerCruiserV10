@@ -29,7 +29,9 @@ app.use(bodyParser.json());
 
 
 app.use(cors());
-
+app.get('/', (req, res) => {
+    res.send('Hello, world!');
+  });
 app.use('/register', registerRoute);
 app.use('/login', loginRoute);
 app.use('/users', getUserRoute)
