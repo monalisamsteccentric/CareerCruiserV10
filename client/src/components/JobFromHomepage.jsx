@@ -9,7 +9,7 @@ const JobFromHomepage = () => {
   const jobId = params.jobid;
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/jobsbyid?jobId=${jobId}`)
+    axios.get(`${process.env.url}/jobsbyid?jobId=${jobId}`)
       .then(response => setJob(response.data))
       .catch(error => console.error(error.message));
   }, [jobId]);
