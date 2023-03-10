@@ -23,7 +23,7 @@ function WorkExperience(props) {
       endDate,
       description,
     };
-    axios.post('http://localhost:8000/profile/workexperiences', workExperienceData)
+    axios.post('https://careercruiser-backend.onrender.com/profile/workexperiences', workExperienceData)
     .then((response) => {
       console.log('Work Experience Data sent:', response.data);
       props.handleCloseForm();

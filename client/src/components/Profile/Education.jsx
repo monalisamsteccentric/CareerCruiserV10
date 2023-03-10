@@ -19,7 +19,7 @@ function EducationForm(props) {
       startDate,
       endDate,
     };
-    axios.post('http://localhost:8000/profile/education', educationData)
+    axios.post('https://careercruiser-backend.onrender.com/profile/education', educationData)
       .then((response) => {
         console.log('Education Data sent:', response.data);
         props.handleCloseForm();

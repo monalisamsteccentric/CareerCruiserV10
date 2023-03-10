@@ -11,7 +11,7 @@ const ProfileSkills = () => {
 
   useEffect(() => {
     const user = name.userId;
-    axios.get(`http://localhost:8000/getprofile/getskills`, {
+    axios.get(`https://careercruiser-backend.onrender.com/getprofile/getskills`, {
         params: { user } ,
     })
       .then(response => {

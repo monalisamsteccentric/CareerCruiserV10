@@ -11,7 +11,7 @@ const ProfileJobPreferences = () => {
 
   useEffect(() => {
     const user = name.userId
-    axios.get(`http://localhost:8000/getprofile/getjobpreferences`,{
+    axios.get(`https://careercruiser-backend.onrender.com/getprofile/getjobpreferences`,{
         params: { user } // pass user as a parameter
       })
       .then(response => {

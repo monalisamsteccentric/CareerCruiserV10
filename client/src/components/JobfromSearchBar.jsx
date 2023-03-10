@@ -8,7 +8,7 @@ const JobfromSearchBar = () => {
   const jobId = params.resultid;
 
   useEffect(() => {
-    axios.get(`http://localhost:8000/jobsbyid?jobId=${jobId}`)
+    axios.get(`https://careercruiser-backend.onrender.com/jobsbyid?jobId=${jobId}`)
       .then(response => setJob(response.data))
       .catch(error => console.error(error.message));
   }, [jobId]);

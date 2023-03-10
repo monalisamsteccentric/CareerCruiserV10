@@ -10,7 +10,7 @@ function SearchBar() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    const response = await axios.get(`http://localhost:8000/search?q=${query}`);
+    const response = await axios.get(`https://careercruiser-backend.onrender.com/search?q=${query}`);
     setResults(response.data);
   };
   const clickHandler = (resultId) =>{

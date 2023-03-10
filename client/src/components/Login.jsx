@@ -15,7 +15,7 @@ const Login = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     try {
-      const response = await axios.post("http://localhost:8000/login", { username, password });
+      const response = await axios.post("https://careercruiser-backend.onrender.com/login", { username, password });
       const { data } = response;
       localStorage.setItem('token', JSON.stringify(data));
       dispatch(fetchUserName());

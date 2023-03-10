@@ -11,7 +11,7 @@ const { name } = useSelector(state=>state.user);
 
 useEffect(() => {
 const user = name.userId;
-axios.get(`http://localhost:8000/getprofile/getgenerals`,{
+axios.get(`https://careercruiser-backend.onrender.com/getgenerals`,{
     params: { user } 
   })
 .then(response => {

@@ -22,7 +22,7 @@ function General(props) {
       address,
     };
 
-    axios.post('http://localhost:8000/profile/general', generalData)
+    axios.post('https://careercruiser-backend.onrender.com/profile/general', generalData)
     .then((response) => {
       console.log('General Data sent:', response.data);
       props.handleCloseForm();

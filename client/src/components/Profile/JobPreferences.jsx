@@ -23,7 +23,7 @@ function JobPreferences(props) {
       description,
     };
 
-    axios.post('http://localhost:8000/profile/jobpreferences', jobPrefData)
+    axios.post('https://careercruiser-backend.onrender.com/profile/jobpreferences', jobPrefData)
     .then((response) => {
       console.log('Job Preference Data sent:', response.data);
       props.handleCloseForm();

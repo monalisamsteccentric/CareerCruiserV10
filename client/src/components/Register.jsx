@@ -11,7 +11,7 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     axios
-      .post("http://localhost:8000/register", {
+      .post("https://careercruiser-backend.onrender.com/register", {
         username,
         email,
         password,

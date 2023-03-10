@@ -17,7 +17,7 @@ function Skills(props) {
       proficiency,
     };
 
-    axios.post('http://localhost:8000/profile/skills', skillData)
+    axios.post('https://careercruiser-backend.onrender.com/profile/skills', skillData)
     .then((response) => {
       console.log('Skill Data sent:', response.data);
       props.handleCloseForm();

@@ -14,7 +14,7 @@ export const fetchData = createAsyncThunk("data/fetchData", async () => {
       Location: store.getState().location.selectedOptions,
       Category: store.getState().workMode.selectedOptions,
     };
-    const response = await axios.get("http://localhost:8000/jobs", {
+    const response = await axios.get("https://careercruiser-backend.onrender.com/jobs", {
       params: requestData,
     });
     return response.data;

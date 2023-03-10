@@ -13,7 +13,7 @@ const ProfileEducation = () => {
   useEffect(() => {
     const user = name.userId;
     axios
-      .get("http://localhost:8000/getprofile/geteducations", {
+      .get("https://careercruiser-backend.onrender.com/getprofile/geteducations", {
         params: { user }, // pass user as a parameter
       })
       .then((response) => {

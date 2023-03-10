@@ -15,7 +15,7 @@ const Project = (props) => {
     event.preventDefault();
     const user = userName.userId;
     const projectData = { user, name, description, role, startDate, endDate };
-    axios.post('http://localhost:8000/profile/projects', projectData)
+    axios.post('https://careercruiser-backend.onrender.com/profile/projects', projectData)
     .then((response) => {
       console.log('Project Data sent:', response.data);
       props.handleCloseForm();

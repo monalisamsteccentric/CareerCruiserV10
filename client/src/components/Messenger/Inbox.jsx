@@ -9,7 +9,7 @@ const Inbox = () => {
   useEffect(() => {
     const fetchMessages = async () => {
       try {
-        const response = await axios.get(`http://localhost:8000/inboxmessages?recipient=${name.userId}`);
+        const response = await axios.get(`https://careercruiser-backend.onrender.com/inboxmessages?recipient=${name.userId}`);
         setMessages(response.data);
       } catch (error) {
         console.error(error);

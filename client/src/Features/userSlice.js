@@ -5,7 +5,7 @@ export const fetchUserName = createAsyncThunk(
   'user/fetchUserName',
   async () => {
     const token = localStorage.getItem('token')
-    const response = await axios.post("http://localhost:8000/users", { token });
+    const response = await axios.post("https://careercruiser-backend.onrender.com/users", { token });
     return response.data;
   }
 );

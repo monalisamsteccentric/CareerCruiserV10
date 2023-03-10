@@ -10,7 +10,7 @@ const SentMessages = () => {
     const fetchSentMessages = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:8000/sentmessages?sender=${name.userId}`
+          `https://careercruiser-backend.onrender.com/sentmessages?sender=${name.userId}`
         );
         setMessages(response.data);
       } catch (error) {

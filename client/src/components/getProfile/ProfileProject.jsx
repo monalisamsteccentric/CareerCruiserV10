@@ -11,7 +11,7 @@ const ProfileProject = () => {
 
   useEffect(() => {
     const user = name.userId;
-    axios.get(`http://localhost:8000/getprofile/getprojects`, {
+    axios.get(`https://careercruiser-backend.onrender.com/getprofile/getprojects`, {
         params: { user } // pass user as a parameter
       })
       .then(response => {

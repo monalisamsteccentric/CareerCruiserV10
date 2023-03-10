@@ -19,7 +19,7 @@ const ComposeMessage = () => {
       recipient
     };
 
-    axios.post('http://localhost:8000/messages', data)
+    axios.post('https://careercruiser-backend.onrender.com/messages', data)
       .then((response) => {
         console.log('Message sent:', response.data);
         setMessage('');
