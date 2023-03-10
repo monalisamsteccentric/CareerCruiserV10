@@ -15,6 +15,7 @@ import getProfileRouter from './routes/getProfile.js'
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import getJobByIdRouter  from './routes/getJobById.js';
+import history from 'connect-history-api-fallback';
 
 
 
@@ -26,6 +27,14 @@ dotenv.config();
 const app = express();
 app.use(cookieParser())
 app.use(bodyParser.json());
+
+app.use(express.static('public'));
+
+
+app.use(history({
+  disableDotRule: true,
+  verbose: true
+}));
 
 
 app.use(cors());
