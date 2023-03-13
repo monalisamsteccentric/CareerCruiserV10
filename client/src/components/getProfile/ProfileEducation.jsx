@@ -2,16 +2,17 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Education from "../Profile/Education";
 import './styleFile.css'
-import { useSelector } from "react-redux";
+
 
 const ProfileEducation = () => {
   const [educationData, setEducationData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false); // Add state variable for pop-up form
-  const { name } = useSelector((state) => state.user);
+  // const { name } = useSelector((state) => state.user);
+  const user = JSON.parse(localStorage.getItem('userId'))
 
   useEffect(() => {
-    const user = name.userId;
+    
     axios
       .get("https://careercruiser-backend.onrender.com/getprofile/geteducations", {
         params: { user }, // pass user as a parameter
@@ -24,7 +25,7 @@ const ProfileEducation = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [name.userId]);
+  }, [user]);
 
   const handleShowForm = () => {
     setShowForm(true); // Update state variable to show pop-up form

@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
 import General from '../Profile/General';
 
 const ProfileGeneral = () => {
 const [generalData, setGeneralData] = useState(null);
 const [loading, setLoading] = useState(true);
 const [showForm, setShowForm] = useState(false);
-const { name } = useSelector(state=>state.user);
+// const { name } = useSelector(state=>state.user);
+const user = JSON.parse(localStorage.getItem('userId'))
 
 useEffect(() => {
-const user = name.userId;
-axios.get(`https://careercruiser-backend.onrender.com/getgenerals`,{
+axios.get(`https://careercruiser-backend.onrender.com/getprofile/getgenerals`,{
     params: { user } 
   })
 .then(response => {
@@ -23,7 +22,7 @@ setLoading(false);
 console.log(error);
 setLoading(false);
 });
-}, [name.userId]);
+}, [user]);
 
 const handleShowForm = () => {
   setShowForm(true); // Update state variable to show pop-up form

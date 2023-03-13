@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import JobPreferences from '../Profile/JobPreferences'
-import { useSelector } from "react-redux";
+
 
 const ProfileJobPreferences = () => {
   const [jobPreferencesData, setJobPreferencesData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const { name } = useSelector(state=>state.user)
+  const user = JSON.parse(localStorage.getItem('userId'))
 
   useEffect(() => {
-    const user = name.userId
+   
     axios.get(`https://careercruiser-backend.onrender.com/getprofile/getjobpreferences`,{
         params: { user } // pass user as a parameter
       })
@@ -23,7 +23,7 @@ const ProfileJobPreferences = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [name.userId]);
+  }, [user]);
 
   const handleShowForm = () => {
     setShowForm(true); // Update state variable to show pop-up form

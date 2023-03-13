@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
+
 import Skills from '../Profile/Skills';
 
 const ProfileSkills = () => {
   const [skillsData, setSkillsData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const { name } = useSelector(state => state.user);
+  const user = JSON.parse(localStorage.getItem('userId'))
 
   useEffect(() => {
-    const user = name.userId;
+    
     axios.get(`https://careercruiser-backend.onrender.com/getprofile/getskills`, {
         params: { user } ,
     })
@@ -23,7 +23,7 @@ const ProfileSkills = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [name.userId]);
+  }, [user]);
 
   const handleShowForm = () => {
     setShowForm(true); // Update state variable to show pop-up form

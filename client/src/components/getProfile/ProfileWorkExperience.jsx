@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { useSelector } from "react-redux";
+
 import WorkExperience from "../Profile/WorkExperience";
 
 const ProfileWorkExperience = () => {
   const [workExperienceData, setWorkExperienceData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
-  const { name } = useSelector(state => state.user);
-
+  const user = JSON.parse(localStorage.getItem('userId'))
   useEffect(() => {
-    const user = name.userId;
+    
     axios.get(`https://careercruiser-backend.onrender.com/getprofile/getworkexperiences/`, {
         params: { user }
     })
@@ -22,7 +21,7 @@ const ProfileWorkExperience = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [name.userId]);
+  }, [user]);
 
   const handleShowForm = () => {
     setShowForm(true); // Update state variable to show pop-up form
