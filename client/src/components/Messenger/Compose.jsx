@@ -6,7 +6,7 @@ const ComposeMessage = () => {
   const [message, setMessage] = useState('');
   const [sender, setSender] = useState('');
   const [recipient, setRecipient] = useState('');
-  const user = JSON.parse(localStorage.getItem('userId'))
+  const user = JSON.parse(localStorage.getItem('username'))
 
   const handleSubmit = (event) => {
     event.preventDefault();
