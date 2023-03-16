@@ -25,6 +25,8 @@ function Skills(props) {
     .catch((error) => {
       console.error('Error sending data:', error);
     });
+    const item = localStorage.getItem('changedSki') ? JSON.parse(localStorage.getItem('changedSki'))+1 : 1
+      localStorage.setItem('changedSki', item)
    
   };
 

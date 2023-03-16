@@ -8,6 +8,7 @@ const ProfileJobPreferences = () => {
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const user = JSON.parse(localStorage.getItem('userId'))
+  const item = JSON.parse(localStorage.getItem('changedJp'))
 
   useEffect(() => {
    
@@ -23,7 +24,7 @@ const ProfileJobPreferences = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [user]);
+  }, [user, item]);
 
   const handleShowForm = () => {
     setShowForm(true); // Update state variable to show pop-up form

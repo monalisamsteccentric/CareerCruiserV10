@@ -10,7 +10,7 @@ const ProfileEducation = () => {
   const [showForm, setShowForm] = useState(false); // Add state variable for pop-up form
   // const { name } = useSelector((state) => state.user);
   const user = JSON.parse(localStorage.getItem('userId'))
-
+  const item = JSON.parse(localStorage.getItem('changedEd'))
   useEffect(() => {
     
     axios
@@ -25,7 +25,7 @@ const ProfileEducation = () => {
         console.log(error);
         setLoading(false);
       });
-  }, [user]);
+  }, [user, item]);
 
   const handleShowForm = () => {
     setShowForm(true); // Update state variable to show pop-up form

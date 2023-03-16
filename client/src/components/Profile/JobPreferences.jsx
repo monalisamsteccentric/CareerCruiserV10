@@ -31,6 +31,8 @@ function JobPreferences(props) {
     .catch((error) => {
       console.error('Error sending data:', error);
     });
+    const item = localStorage.getItem('changedJp') ? JSON.parse(localStorage.getItem('changedJp'))+1 : 1
+      localStorage.setItem('changedJp', item)
     
   };
 

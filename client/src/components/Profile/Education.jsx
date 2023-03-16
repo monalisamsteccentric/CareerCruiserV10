@@ -27,6 +27,8 @@ function EducationForm(props) {
       .catch((error) => {
         console.error('Error sending data:', error);
       });
+      const item = localStorage.getItem('changedEd') ? JSON.parse(localStorage.getItem('changedEd'))+1 : 1
+      localStorage.setItem('changedEd', item)
   };
 
   return (

@@ -23,6 +23,8 @@ const Project = (props) => {
     .catch((error) => {
       console.error('Error sending data:', error);
     });
+    const item = localStorage.getItem('changedProj') ? JSON.parse(localStorage.getItem('changedProj'))+1 : 1
+      localStorage.setItem('changedProj', item)
     
   };
 

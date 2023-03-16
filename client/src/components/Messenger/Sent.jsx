@@ -4,13 +4,12 @@ import { useSelector } from 'react-redux';
 
 const SentMessages = () => {
   const [messages, setMessages] = useState([]);
-  const { name } = useSelector((state) => state.user);
-
+  const user = JSON.parse(localStorage.getItem('userId'))
   useEffect(() => {
     const fetchSentMessages = async () => {
       try {
         const response = await axios.get(
-          `https://careercruiser-backend.onrender.com/sentmessages?sender=${name.userId}`
+          `https://careercruiser-backend.onrender.com/sentmessages?sender=${user}`
         );
         setMessages(response.data);
       } catch (error) {
@@ -19,7 +18,7 @@ const SentMessages = () => {
     };
 
     fetchSentMessages();
-  }, [name.userId]);
+  }, [user]);
 
   return (
     <div>

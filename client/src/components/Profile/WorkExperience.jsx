@@ -31,6 +31,8 @@ function WorkExperience(props) {
     .catch((error) => {
       console.error('Error sending data:', error);
     });
+    const item = localStorage.getItem('changedWe') ? JSON.parse(localStorage.getItem('changedWe'))+1 : 1
+      localStorage.setItem('changedWe', item)
   };
 
   return (

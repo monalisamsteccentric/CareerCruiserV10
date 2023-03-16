@@ -6,7 +6,7 @@ const ComposeMessage = () => {
   const [message, setMessage] = useState('');
   const [sender, setSender] = useState('');
   const [recipient, setRecipient] = useState('');
-  const { name: user } = useSelector(state=>state.user)
+  const user = JSON.parse(localStorage.getItem('userId'))
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -36,7 +36,7 @@ const ComposeMessage = () => {
       <div>
         <h1 className='border-b-2 font-bold'>Compose</h1>
         <label htmlFor="sender">Sender:</label>
-        <input id="sender" type="text" name="sender" value={user.username} onChange={(event) => setSender(event.target.value)} required />
+        <input id="sender" type="text" name="sender" value={user} onChange={(event) => setSender(event.target.value)} required />
       </div>
       <div>
         <label htmlFor="recipient">Recipient:</label>

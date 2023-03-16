@@ -30,6 +30,8 @@ function General(props) {
     .catch((error) => {
       console.error('Error sending data:', error);
     });
+    const item = localStorage.getItem('changedGen') ? JSON.parse(localStorage.getItem('changedGen'))+1 : 1
+      localStorage.setItem('changedGen', item)
    
   };
 
