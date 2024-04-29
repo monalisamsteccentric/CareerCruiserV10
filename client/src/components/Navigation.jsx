@@ -36,6 +36,12 @@ const Navigation = () => {
         <li className='mb-2 md:mb-0 right'>
           <Link to='/messages'>Messages</Link>
         </li>
+        <li className='mb-2 md:mb-0 right'>
+          <Link to='/postajob'>Post A Job</Link>
+        </li>
+        <li className='mb-2 md:mb-0 right'>
+          <Link to='/jobapplication'>Apply for the Job</Link>
+        </li>
         {isLoggedin ? (
           <li className='mb-2 md:mb-0 right'>
             <button onClick={handleLogout}>Logout</button>

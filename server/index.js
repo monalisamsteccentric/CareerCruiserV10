@@ -12,10 +12,12 @@ import inboxMessageRouter from './routes/inboxMessage.js';
 import sentmessageRouter from './routes/sentMessage.js';
 import setProfileRouter from './routes/setProfile.js';
 import getProfileRouter from './routes/getProfile.js'
+import postJob from './routes/postJob.js';
 import dotenv from 'dotenv';
 import cookieParser from 'cookie-parser';
 import getJobByIdRouter  from './routes/getJobById.js';
 import history from 'connect-history-api-fallback';
+import  getcreatedjobs  from './routes/getcreatedjobs.js';
 
 
 
@@ -27,8 +29,6 @@ dotenv.config();
 const app = express();
 app.use(cookieParser())
 app.use(bodyParser.json());
-
-app.use(express.static('public'));
 
 
 app.use(history({
@@ -52,6 +52,8 @@ app.use('/sentmessages', sentmessageRouter)
 app.use('/profile', setProfileRouter)
 app.use('/getprofile', getProfileRouter)
 app.use('/jobsbyid', getJobByIdRouter)
+app.use('/postjob', postJob)
+app.use('/getcreatedjobs', getcreatedjobs)
 
 mongoose.set('strictQuery', false);
 

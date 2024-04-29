@@ -8,6 +8,14 @@ import MessengerInterface from './components/Messenger/MessengerInterface'
 import UserInterface from './components/UserInterface';
 import JobFromHomepage from './components/JobFromHomepage'
 import JobfromSearchBar from './components/JobfromSearchBar'
+import JobPostForm from './components/JobPosting/JobPostForm'
+import JobListings from './components/applyforjob/JobListings'
+
+import emailjs from 'emailjs-com';
+
+// Initialize EmailJS
+emailjs.init("dhoniyyM-me3nyStA");
+
 
 
 
@@ -34,7 +42,8 @@ const App = () => {
            <Route path='/jobhomepage/:jobid' element={<JobFromHomepage/>}/>
            <Route path='/jobsearchbar/:resultid' element={<JobfromSearchBar/>}/>
           <Route path='/profile' element={<ProfileInterface/>}/>
-          
+          <Route path='/postajob' element={<JobPostForm/>}/>
+          <Route path='/jobapplication' element={<JobListings/>}/>          
         </Routes>
       </BrowserRouter>
     </div>
